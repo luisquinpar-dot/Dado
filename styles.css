@@ -23,8 +23,8 @@ body {
 /* Tema Clásico */
 body.theme-classic {
     --dice-face-bg: #fff;
-    --dice-face-border: #333;
-    --dice-dot-bg: #333;
+    --dice-face-border: #1a1a1a;
+    --dice-dot-bg: #1a1a1a;
 }
 
 /* Tema Neón */
@@ -132,7 +132,11 @@ h1 {
     cursor: pointer;
 }
 
-.face {
+.dice:focus-visible {
+    outline: 3px solid var(--dice-face-border);
+    outline-offset: 4px;
+    
+}.face {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -294,4 +298,4 @@ h1 {
     .face-left   { transform: rotateY(-90deg) translateZ(50px); }
     .face-top    { transform: rotateX( 90deg) translateZ(50px); }
     .face-bottom { transform: rotateX(-90deg) translateZ(50px); }
-}
+ }

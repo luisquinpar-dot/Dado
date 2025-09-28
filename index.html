@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎲 Lanza los Dados</h1>
+        <h1><span aria-hidden="true">🎲</span> Lanza los Dados</h1>
 
         <div class="theme-selector">
-            <button class="theme-btn active" data-theme="casino">Casino</button>
-            <button class="theme-btn" data-theme="classic">Clásico</button>
-            <button class="theme-btn" data-theme="neon">Neón</button>
+      
+        <button class="theme-btn active" data-theme="casino" aria-pressed="true">Casino</button>
+        <button class="theme-btn" data-theme="classic" aria-pressed="false">Clásico</button>
+        <button class="theme-btn" data-theme="neon" aria-pressed="false">Neón</button>
         </div>
-
         <div class="controls">
             <label for="dice-count">Número de Dados:</label>
             <select id="dice-count">

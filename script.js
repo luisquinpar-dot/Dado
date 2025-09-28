@@ -39,9 +39,13 @@ class DiceSimulator {
             button.addEventListener('click', (e) => {
                 const theme = e.target.dataset.theme;
 
-                // Quitar clase activa de todos los botones
-                themeButtons.forEach(btn => btn.classList.remove('active'));
+                // Quitar clase activa y estado presionado de todos los botones
+                themeButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
                 // Añadir clase activa al botón clickeado
+                e.target.setAttribute('aria-pressed', 'true');
                 e.target.classList.add('active');
 
                 // Aplicar el tema al body
@@ -147,6 +151,7 @@ class DiceSimulator {
             const die = document.createElement('div');
             die.className = 'dice';
             die.setAttribute('role', 'img');
+            die.setAttribute('tabindex', '0'); // Hacer el dado enfocable
             
             const facesHTML = `
                 <div class="face face-front"> <!-- Cara 1 --> <div class="dot"></div> </div>
@@ -160,6 +165,12 @@ class DiceSimulator {
 
             // Añadir evento de click a cada dado
             die.addEventListener('click', () => this.rollDice());
+            // Añadir evento de teclado para lanzar con Enter o Espacio
+            die.addEventListener('keydown', (event) => {
+                if (event.code === 'Enter' || event.code === 'Space') {
+                    this.rollDice();
+                }
+            });
 
             this.diceContainer.appendChild(die);
             this.diceElements.push(die);
