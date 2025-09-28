@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Dado</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 Lanza los Dados</h1>
+
+        <div class="theme-selector">
+            <button class="theme-btn active" data-theme="casino">Casino</button>
+            <button class="theme-btn" data-theme="classic">Clásico</button>
+            <button class="theme-btn" data-theme="neon">Neón</button>
+        </div>
+
+        <div class="controls">
+            <label for="dice-count">Número de Dados:</label>
+            <select id="dice-count">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        
+        <div class="dice-container" id="dice-container"></div>
+        
+        <button class="roll-button" id="rollButton">Lanzar Dado</button>
+        
+        <div class="result" id="result" aria-live="polite" aria-atomic="true"></div>
+        
+        <div class="stats" id="stats" aria-live="polite">
+            Lanzamientos: 0
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
